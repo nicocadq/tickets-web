@@ -10,9 +10,9 @@ type Props = {
   subject: string;
 };
 
-export const Ticket = ({ body, date, from, status, subject }: Props) => (
+const Ticket = ({ body, date, from, status, subject }: Props) => (
   <div className={styles.container}>
-    <div>
+    <div className={styles.info}>
       <span>
         From:
         {from}
@@ -23,11 +23,11 @@ export const Ticket = ({ body, date, from, status, subject }: Props) => (
       </span>
     </div>
     <div>
-      <div>
+      <div className={styles.header}>
         <Status status={status} />
-        <p>{subject}</p>
+        <p className={styles.subject}>{subject}</p>
       </div>
-      <p>{body}</p>
+      <p className={styles.body}>{body}</p>
     </div>
   </div>
 );

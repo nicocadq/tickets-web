@@ -2,3 +2,43 @@
   border-top: 1px solid #ccc;
   padding: 0.8rem;
 }
+
+.info {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  margin-block: 0.1rem;
+}
+
+.status {
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.status.new {
+  background-color: #ff0000;
+}
+
+.status.solved {
+  background-color: #8f00ff;
+}
+
+.subject {
+  font-weight: bold;
+}
+
+.body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
