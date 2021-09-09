@@ -13,11 +13,9 @@ export const useTickets = () => {
 
         const response = await TicketsService.index();
 
-        console.log(response);
-
         setTickets(response);
       } catch (requestError) {
-        console.error(requestError);
+        setError(requestError as Error);
       } finally {
         setIsLoading(false);
       }
