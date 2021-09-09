@@ -1,0 +1,12 @@
+.container {
+  background-color: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.title {
+  padding-left: 0.8rem;
+}

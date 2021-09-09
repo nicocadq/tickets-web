@@ -5,22 +5,14 @@ type HttpClientParams = {
   data?: Object,
 };
 
-export const httpClient = (
-  {
-    params, method, endpoint, data
-  } : HttpClientParams
-) => {
+export const httpClient = ({ params, method, endpoint, data } : HttpClientParams) => {
   let headers = { 'Content-Type': 'application/json' };
 
   if (params?.headers) {
     headers = { ...headers, ...params.headers };
   }
 
-  return fetch(`${process.env.REACT_APP_API_URL}${endpoint}`, {
-    method,
-    body: JSON.stringify(data),
-    headers
-  })
+  return fetch(`${process.env.REACT_APP_API_URL}${endpoint}`, { method, body: JSON.stringify(data), headers })
     .then((res) => res.json())
     .catch(({ response }) => {
       if (!response) {

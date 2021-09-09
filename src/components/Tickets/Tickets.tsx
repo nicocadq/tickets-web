@@ -1,19 +1,29 @@
 import { useTickets } from '../../hooks/useTickets';
+import Ticket from '../Ticket';
+
+import styles from './Tickets.module.css';
 
 const Tickets = () => {
   const { error, isLoading, tickets } = useTickets();
 
-  if (error || !(tickets.length > 0)) {
-    return <p>There are not tickets to show</p>;
-  }
-
   if (isLoading) return <p>Loading...</p>;
 
+  if (error) return <p>Something went wrong! Try again later</p>;
+
   return (
-    <div>
-      {tickets.map(({ subject, ticketId }) => (
-        <p key={ticketId}>{subject}</p>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Tickets</h1>
+      {tickets.map(({ body, date, from, status, subject, ticketId }) => (
+        <Ticket
+          key={ticketId}
+          body={body}
+          date={date}
+          from={from}
+          status={status}
+          subject={subject}
+        />
       ))}
+      {!(tickets.length > 0) && <p>There are not tickets to show</p>}
     </div>
   );
 };

@@ -26,9 +26,5 @@ export const useTickets = () => {
     fetchTickets();
   }, []);
 
-  return {
-    error,
-    isLoading,
-    tickets
-  };
+  return { error, isLoading, tickets };
 };
