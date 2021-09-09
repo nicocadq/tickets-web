@@ -13,9 +13,9 @@ const Tickets = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Tickets</h1>
-      {tickets.map(({ body, date, from, status, subject, ticketId }) => (
+      {tickets.map(({ body, date, from, status, subject, _id }) => (
         <Ticket
-          key={ticketId}
+          key={_id}
           body={body}
           date={date}
           from={from}
